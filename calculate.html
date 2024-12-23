@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard with Calculations</title>
+    <script>
+        // Function to calculate Total Sales based on price and quantity sold
+        function calculateTotalSales() {
+            // Assuming 'items' is an array of objects with price and quantity properties
+            const items = [
+                { price: 100, quantity: 5 },
+                { price: 200, quantity: 3 },
+                // Add more items as needed
+            ];
+
+            let totalSales = 0;
+            items.forEach(item => {
+                totalSales += item.price * item.quantity;
+            });
+
+            document.getElementById("totalSalesResult").innerText = "Total Sales: $" + totalSales.toFixed(2);
+        }
+
+        // Function to calculate Net Income (Total Sales - Total Expenses)
+        function calculateNetIncome() {
+            // Assuming total sales and total expenses are defined
+            const totalSales = 1000; // Replace this with actual total sales from calculateTotalSales
+            const totalExpenses = 300; // Replace with actual expenses input
+
+            const netIncome = totalSales - totalExpenses;
+
+            document.getElementById("netIncomeResult").innerText = "Net Income: $" + netIncome.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h1>Dashboard</h1>
+
+    <!-- Button to calculate Total Sales -->
+    <button onclick="calculateTotalSales()">Calculate Total Sales</button>
+    <p id="totalSalesResult"></p>
+
+    <!-- Button to calculate Net Income -->
+    <button onclick="calculateNetIncome()">Calculate Net Income</button>
+    <p id="netIncomeResult"></p>
+</body>
+</html>

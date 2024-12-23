@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style/login.css">
+</head>
+<body>
+    <h1>Login</h1>
+    <form onsubmit="event.preventDefault(); loginUser();">
+        <label>Username:</label>
+        <input type="text" id="username">
+        <label>Password:</label>
+        <input type="password" id="password">
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        async function loginUser() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const response = await fetch('auth.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `login=true&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`
+            });
+
+            const result = await response.json();
+            alert(result.message);  // Display message (e.g., login success or failure)
+
+            if (result.success) {
+                window.location.href = 'dashboard.php';  // Redirect to dashboard on successful login
+            }
+        }
+    </script>
+</body>
+</html>

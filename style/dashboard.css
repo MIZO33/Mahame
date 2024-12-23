@@ -1,0 +1,136 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sidebar Styles */
+#sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#sidebar ul {
+    list-style: none;
+}
+
+#sidebar button {
+    width: 100%;
+    background-color: #444;
+    color: white;
+    border: none;
+    margin: 5px 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#sidebar button.active {
+    background-color: #555;
+}
+
+/* Main Content Styles */
+main {
+    margin-left: 200px; /* To prevent content from being hidden under the sidebar */
+    padding: 20px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.header {
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+/* Position the User Management button in the top right corner */
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-management {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.user-management button {
+    padding: 10px 20px;
+    background-color: #555; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user-management button:hover {
+    background-color: #444;
+}
+
+
+#content {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: calc(100% - 60px); /* Dynamic height calculation */
+    overflow-y: auto; /* Scroll only inside the content */
+}
+
+/* Inventory Form Styling */
+#formContainer {
+    margin-top: 15px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+table th {
+    background-color: #555;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

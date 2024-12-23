@@ -1,0 +1,122 @@
+/* Add a smooth fade-in animation to the form and table */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the fadeIn animation to the form and table */
+form, table {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Row fade-in for each room update */
+@keyframes rowUpdate {
+    0% {
+        background-color: #fff8e1; /* Light highlight color */
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+/* Apply animation when updating room details */
+.table-row-updated {
+    animation: rowUpdate 2s ease;
+}
+/* Home Button Styling */
+.home-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #2c3e50;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Animation on hover */
+.home-button:hover {
+    background-color: #293129;
+    transform: scale(1.1);
+}
+
+
+/* Button hover effects */
+button {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2c3e50;
+    cursor: pointer;
+}
+
+/* Select dropdown and input field styling */
+select, input[type="number"], input[type="text"] {
+    padding: 8px;
+    margin: 4px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select:focus, input[type="number"]:focus, input[type="text"]:focus {
+    border-color: #2c3e50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+/* Animate price input when it's enabled */
+@keyframes highlight {
+    from {
+        background-color: #e7ffe7;
+    }
+    to {
+        background-color: transparent;
+    }
+}
+
+input[type="number"]:enabled {
+    animation: highlight 1s ease;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fafafa;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #2c3e50;
+    color: white;
+}
+
+/* Apply hover effect on table rows */
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
